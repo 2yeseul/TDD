@@ -26,12 +26,14 @@ jobs:
       with:
         java-version: '11'
         distribution: 'temurin'
+      
     - name: 💨 Cache Gradle packages
-        uses: actions/cache@v2
-        with:
-          path: ~/.gradle/caches
-          key: ${{ runner.os }}-gradle-${{ hashFiles('**/*.gradle') }}
-          restore-keys: ${{ runner.os }}-gradle
+      uses: actions/cache@v2.1.7
+      with:
+        path: ~/.gradle/caches
+        key: ${{ runner.os }}-gradle-${{ hashFiles('**/*.gradle') }}
+        restore-keys: ${{ runner.os }}-gradle
+        
     - name: 🧪 Build with Gradle Build
       run: ./gradlew --exclude-task test build
     
