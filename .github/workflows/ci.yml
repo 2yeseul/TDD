@@ -35,5 +35,5 @@ jobs:
         restore-keys: ${{ runner.os }}-gradle
         
     - name: 🧪 Build with Gradle Build
-      run: ./gradlew --exclude-task test build
+      run: ./gradlew build
     
